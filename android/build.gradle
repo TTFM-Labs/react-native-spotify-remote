@@ -48,6 +48,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['external']
+        }
+    }
 }
 
 repositories {
@@ -61,14 +66,10 @@ repositories {
     jcenter()
 }
 
-
-
 dependencies {
-    def externalLibs = fileTree(dir: "$projectDir/external", include: '**/*.aar').collect()
-    println("Adding external libraries ${externalLibs}")
-    implementation files(externalLibs)
+    implementation (files("external/SpotifySDK/auth-lib/spotify-auth-release-1.2.3.aar"))
+    implementation (files("external/SpotifySDK/app-remote-lib/spotify-app-remote-release-0.7.2.aar"))
     implementation "com.google.code.gson:gson:2.8.5"  // needed by spotify-app-remote
-    implementation project(path: ':react-native-events')  // From node_module
     //noinspection GradleDynamicVersion
     implementation "com.facebook.react:react-native:+"  // From node_modules
 }
