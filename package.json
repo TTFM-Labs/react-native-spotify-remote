@@ -29,7 +29,7 @@
     "mobile",
     "player"
   ],
-  "main": "dist/index.js",
+  "main": "dist/index",
   "module": "dist/index",
   "types": "dist/index.d.ts",
   "source": "dist/index",
@@ -52,11 +52,9 @@
     "contribute": "all-contributors add && all-contributors generate"
   },
   "peerDependencies": {
-    "react-native": ">=0.66"
+    "react-native": ">=0.60"
   },
-  "dependencies": {
-    "react-native-events": "github:gustavoggs/react-native-events.git#dd151b263c9aba0d351062a01037ca4375f742cc"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@release-it/keep-a-changelog": "^2.2.2",
     "@types/react-native": "^0.60.0",
