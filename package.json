@@ -29,7 +29,7 @@
     "mobile",
     "player"
   ],
-  "main": "dist/index",
+  "main": "dist/index.js",
   "module": "dist/index",
   "types": "dist/index.d.ts",
   "source": "dist/index",
